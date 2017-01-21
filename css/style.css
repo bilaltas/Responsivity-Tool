@@ -1,0 +1,372 @@
+html, body {
+	margin: 0;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+	font-size: 13px;
+    line-height: 1.4em;
+}
+
+#container {
+	min-height: 100px;
+	height: 100%;
+}
+
+
+iframe {
+	border: 1px solid black;
+	display: block;
+    overflow-y: hidden;
+}
+
+
+
+/* DEVICE STYLES */
+/* = General */
+.device {
+	float: left;
+	margin: 20px;
+	display: table;
+	-webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+	border-radius: 50px;
+}
+
+.device.black {
+	background-color: #1d2d2d;
+}
+
+.device.white {
+	background-color: #fff;
+}
+
+
+/* = Portrait */
+.portrait .front-cam,
+.portrait .ear-speaker {
+    background-color: #959595;
+}
+
+.portrait .front-cam {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.portrait .ear-speaker {
+    width: 57px;
+    height: 7px;
+    border-radius: 3.2px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.portrait .screen {
+    background-color: #F9F9F9;
+	margin: 0 15px;
+}
+
+.portrait .home-button {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #959595;
+    border-radius: 50%;
+    margin: 20px auto;
+}
+
+
+/* = Landscape */
+.landscape > * {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.landscape .front-cam:after {
+    content: "";
+    background-color: #959595;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: 30px;
+    margin-right: 15px;
+    display: block;
+}
+
+.landscape .ear-speaker:after {
+	content: "";
+    background-color: #959595;
+    width: 7px;
+    height: 57px;
+    border-radius: 3.2px;
+    margin-right: 30px;
+    display: block;
+}
+
+.landscape .screen {
+    background-color: #F9F9F9;
+    margin: 15px 0;
+    display: block;
+}
+
+.landscape .home-button:after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border: 2px solid #959595;
+    border-radius: 50%;
+    margin: 0 20px;
+    display: block;
+}
+
+
+/* = No-Device */
+.device.no-device {
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.device.no-device .front-cam, .device.no-device .ear-speaker, .device.no-device .home-button {
+    display: none;
+}
+
+.device.no-device .screen {
+    margin: 0;
+}
+
+.device.no-shadow {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+
+/* = Macbook */
+.macbook:not(.no-device) .ear-speaker {
+    display: none;
+}
+
+.macbook:not(.no-device) {
+    border-radius: 27px;
+    background-color: #2D2D2D !important;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.macbook:not(.no-device) .front-cam {
+    margin-top: 15px;
+}
+
+.macbook:not(.no-device) .screen {
+    margin: 0 42px;
+}
+
+.macbook:not(.no-device) .home-button {
+    margin-top: 42px;
+    width: 25%;
+    height: 35px;
+    box-sizing: border-box;
+    background-color: #B1B1B1;
+    border: 0;
+    border-radius: 0;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.macbook:not(.no-device) .computer-bottom {
+    display: block !important;
+    width: 150%;
+    height: 60px;
+    background-color: #d6d6d6;
+    position: relative;
+    z-index: 0;
+    top: -55px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    margin-bottom: -55px;
+    left: -25%;
+	-webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+}
+
+
+/* = iMac */
+.imac:not(.no-device) .ear-speaker {
+    display: none;
+}
+
+.imac:not(.no-device) {
+    border-radius: 27px;
+    background-color: #2D2D2D !important;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.imac:not(.no-device) .front-cam {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 20px;
+    height: 20px;
+}
+
+.imac:not(.no-device) .screen {
+    margin: 0px 80px;
+}
+
+.imac:not(.no-device) .home-button {
+    margin-top: 200px;
+    width: 25%;
+    height: 85px;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    position: relative;
+    z-index: 1;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMzAuMyIgaGVpZ2h0PSIxNjAiIHZpZXdCb3g9IjE5IDUgMTMwLjMgMTYwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDE5IDUgMTMwLjMgMTYwIj48dGl0bGU+TGF5ZXIgMTwvdGl0bGU+PHBhdGggZD0iTTEyNy44IDkwYy4yIDI0LjIgMjEuMiAzMi4zIDIxLjUgMzIuNC0uMi42LTMuNCAxMS41LTExLjEgMjIuOC02LjcgOS43LTEzLjYgMTkuNS0yNC41IDE5LjctMTAuNy4yLTE0LjItNi40LTI2LjQtNi40cy0xNi4xIDYuMi0yNi4yIDYuNmMtMTAuNS40LTE4LjUtMTAuNS0yNS4zLTIwLjMtMTMuNy0xOS45LTI0LjItNTYuMS0xMC4xLTgwLjYgNy0xMi4yIDE5LjUtMTkuOSAzMy4xLTIwLjEgMTAuMy0uMiAyMC4xIDcgMjYuNCA3IDYuMyAwIDE4LjItOC42IDMwLjYtNy4zIDUuMi4yIDE5LjkgMi4xIDI5LjMgMTUuOS0uOC4zLTE3LjUgMTAuMS0xNy4zIDMwLjNtLTIwLjEtNTkuNWM1LjYtNi44IDkuMy0xNi4yIDguMy0yNS41LTguMS4zLTE3LjggNS40LTIzLjYgMTIuMS01LjIgNi05LjcgMTUuNi04LjUgMjQuNyA5IC44IDE4LjItNC41IDIzLjgtMTEuMyIvPjwvc3ZnPg==);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.imac:not(.no-device) .computer-bottom {
+    display: block !important;
+    width: 100%;
+    height: 300px;
+    background-color: #eae8e8;
+    position: relative;
+    z-index: 0;
+    top: -205px;
+    margin-bottom: -205px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+}
+
+.imac:not(.no-device) .computer-holder {
+	display: block !important;
+    margin: 0 auto;
+    border-bottom: 130px solid #cdcdcd;
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+    height: 0;
+    width: 270px;
+    position: absolute;
+    left: 50%;
+    margin-left: -180px;
+}
+
+
+/* = Current Screen */
+.device.current-screen {
+	margin-right: 0;
+}
+
+
+/* SHOW TITLES */
+.device.show-title {
+	position: relative;
+    margin-top: 60px;
+}
+
+.device.show-title h2 {
+    position: absolute;
+    width: 100%;
+    margin-top: -40px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+
+
+/* FUNCTION BUTTONS */
+/* = Page Functions */
+#functions {
+	position: fixed;
+    left: 0;
+    top: 0;
+    display: block;
+}
+
+#functions > div {
+    float: left;
+    padding: 2px 8px 0 2px;
+    opacity: .2;
+    cursor: pointer;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+#functions > div.active {
+	color: red;
+	opacity: 1;
+}
+
+#functions > div:hover {
+    opacity: 1;
+}
+
+#functions > div > i {
+	position: absolute;
+}
+
+#functions > div > form {
+    position: relative;
+    display: inline-block;
+	border: 1px solid;
+	white-space: nowrap;
+    left: 20px;
+}
+
+#functions > div > form,
+#functions > div > form *:not(span) {
+    display: inline-block;
+    font-size: 13px;
+    line-height: 20px;
+    background-color: white;
+    padding: 2px;
+    color: black;
+}
+
+#functions > div > form h2 {
+    display: block;
+    margin: 0;
+}
+
+#functions > div.inactive > form {
+    display: none;
+}
+
+
+/* = Individual Functions */
+h2 > .fa {
+	cursor: pointer;
+}
+
+h2 > .fa.ind-focus {
+	font-size: 1.1em;
+}
+
+h2 > .fa.active {
+	color: red;
+}
+
+h2 > .fa:hover {
+	opacity: .5;
+}
