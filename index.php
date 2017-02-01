@@ -1,14 +1,21 @@
 <?php
 
-	define("VERSION", "0.0.2");
+	define("VERSION", "0.0.3");
 
 	require_once( 'responsivity-devices.php' );
 
 	$site_url = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . $_SERVER['HTTP_HOST'];
-	$site = isset($_GET['page']) && strip_tags($_GET['page']) != "" ? $site_url.strip_tags($_GET['page']) : $site_url;
+	$page_url = isset($_GET['page']) && strip_tags($_GET['page']) != "" ? strip_tags($_GET['page']) : "";
+	$site =  $site_url.$page_url;
 	$full_height_mode = isset($_GET['full_height_mode']) && strip_tags($_GET['full_height_mode']) ? true : false;
 	$show_devices = isset($_GET['show_devices']) && strip_tags($_GET['show_devices']) ? true : false;
 	$show_titles = isset($_GET['show_titles']) && strip_tags($_GET['show_titles']) ? true : false;
+
+    $device_counter = 0;
+    $device_entered = empty($_GET['device']) ? true : false;
+
+    if ($device_entered)
+	    $show_devices = $show_titles = true;
 
 ?>
 <!DOCTYPE html>
@@ -56,34 +63,32 @@
 			</div>
 
 			<!-- OPTIONS -->
-			<div id="optioner" class="inactive">
+			<div id="optioner" class="<?=$device_entered ? "active" : "inactive"?>">
 				<i class="fa fa-gear" aria-hidden="true"></i>
 				<form id="optioner-form" action="" method="get" accept-charset="utf-8">
 
 					<h2>Page</h2>
 			    	<label for="resp_page">
-				    	<?=$site_url?><input type="text" name="page" value="<?=isset($_GET['page']) ? $_GET['page'] : ""?>" placeholder="Enter the page extension">
+				    	<?=$site_url?><input type="text" name="page" value="<?=$page_url?>" placeholder="Enter the page extension">
 			    	</label><br/>
 
 
 					<h2>Options</h2>
 			    	<label for="resp_full_height_mode">
-				    	<input type="checkbox" id="resp_full_height_mode" name="full_height_mode" value="true" <?=isset($_GET['full_height_mode']) && $_GET['full_height_mode'] ? "checked" : ""?>> Full Height Mode
+				    	<input type="checkbox" id="resp_full_height_mode" name="full_height_mode" value="true" <?=$full_height_mode ? "checked" : ""?>> Full Height Mode
 			    	</label><br/>
 
 			    	<label for="resp_show_devices">
-				    	<input type="checkbox" id="resp_show_devices" name="show_devices" value="true" <?=isset($_GET['show_devices']) && $_GET['show_devices'] ? "checked" : ""?>> Show Device Frames
+				    	<input type="checkbox" id="resp_show_devices" name="show_devices" value="true" <?=$show_devices ? "checked" : ""?>> Show Device Frames
 			    	</label><br/>
 
 			    	<label for="resp_show_titles">
-				    	<input type="checkbox" id="resp_show_titles" name="show_titles" value="true" <?=isset($_GET['show_titles']) && $_GET['show_titles'] ? "checked" : ""?>> Show Titles
+				    	<input type="checkbox" id="resp_show_titles" name="show_titles" value="true" <?=$show_titles ? "checked" : ""?>> Show Titles
 			    	</label><br/>
 
 
 					<h2>Devices</h2>
 				    <?php
-					    $device_counter = 0;
-					    $device_entered = empty($_GET['device']) ? true : false;
 						foreach ($resp_devices as $resp_device => $resp_info) {
 
 							$sizes = "(".$resp_info["width"]." x ".$resp_info["height"].")";
@@ -110,7 +115,7 @@
 				    	<input type="number" id="device-custom-height" name="device-custom[height]" <?=isset($_GET['device-custom']['height']) ? 'value="'.$_GET['device-custom']['height'].'"' : "disabled"?> placeholder="height" min="100">
 			    	</label><br/>
 
-			    	<button id="resp-submit" style="width: 100%;">Update</button>
+			    	<button id="resp-submit" style="width: 100%;"><?=$device_entered ? "Start" : "Update"?></button>
 
 			    </form>
 			</div>
