@@ -1,8 +1,8 @@
 <?php
 
-	define("VERSION", "0.0.1")
+	define("VERSION", "0.0.2");
 
-require_once( 'responsivity-devices.php' );
+	require_once( 'responsivity-devices.php' );
 
 	$site_url = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . $_SERVER['HTTP_HOST'];
 	$site = isset($_GET['page']) && strip_tags($_GET['page']) != "" ? $site_url.strip_tags($_GET['page']) : $site_url;
