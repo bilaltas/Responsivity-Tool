@@ -1,6 +1,6 @@
 <?php
 
-	define("VERSION", "0.0.3");
+	define("VERSION", "0.0.4");
 
 	require_once( 'responsivity-devices.php' );
 

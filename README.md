@@ -10,7 +10,9 @@ You can also send a link to your clients to show them how their websites look on
 
 # Usage
 - Enter "http(s)://yourdomain.com/responsivity"
-- Click the gear icon and hit "Update" button
+- Click the "Start" button
 
 # TO-DO
-- ...
+- Choosable orientation for rotatable devices!
+- Compact mode (Device tabs; only one device can be shown)
+- Night Mode :)
