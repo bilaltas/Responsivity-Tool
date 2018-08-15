@@ -16,7 +16,7 @@ $resp_devices['iPhone 5, 5C, 5S, SE'] = array(
 	"prefer"  => 'checked' // Checked?
 );
 
-$resp_devices['iPhone 6, 6S, 7'] = array(
+$resp_devices['iPhone 6, 6S, 7, 8'] = array(
 	"width"  => 375,
 	"height"  => 667,
 	"rotate"  => true, // Rotatable?
@@ -24,7 +24,7 @@ $resp_devices['iPhone 6, 6S, 7'] = array(
 	"prefer"  => '' // Checked?
 );
 
-$resp_devices['iPhone 6 Plus, 6S Plus, 7 Plus'] = array(
+$resp_devices['iPhone 6 Plus, 6S Plus, 7 Plus, 8 Plus'] = array(
 	"width"  => 414,
 	"height"  => 736,
 	"rotate"  => true, // Rotatable?
