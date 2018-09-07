@@ -63,7 +63,7 @@ class ResponsivityTool {
 
 		<h2>Page</h2>
 		<label for="resp_page">
-	    	<?=$this->site_url?><input type="text" name="page" value="<?=$this->page_url?>" placeholder="Enter the page extension">
+	    	<?=$this->site_url?><input type="text" name="page" value="<?=$this->page_url?>" placeholder="URL extension (Optional)">
 		</label><br/><br/>
 
 <?php
