@@ -1,7 +1,5 @@
 <?php
 
-	define("VERSION", "0.0.4");
-
 	require_once( 'responsivity-class.php' );
 	$responsivity = new ResponsivityTool();
 

@@ -296,6 +296,10 @@ iframe {
 
 /* FUNCTION BUTTONS */
 /* = Page Functions */
+#resp-submit {
+	width: 100%;
+}
+
 #functions {
 	position: fixed;
     left: 0;

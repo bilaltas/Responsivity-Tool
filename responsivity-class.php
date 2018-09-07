@@ -19,8 +19,14 @@ class ResponsivityTool {
 
 		// Get the site info
 		$this->site_url = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . $_SERVER['HTTP_HOST'];
-		$this->page_url = isset($_GET['page']) && strip_tags($_GET['page']) != "" ? strip_tags($_GET['page']) : "";
+		$this->page_url = basename($_SERVER['PHP_SELF']) == "index.php" && isset($_GET['page']) && strip_tags($_GET['page']) != "" ? strip_tags($_GET['page']) : "";
 		$this->full_url = $this->site_url.$this->page_url;
+
+
+		// Add an argument to remove admin bar
+		$query = parse_url($this->full_url, PHP_URL_QUERY);
+		$this->full_url .= ($query ? '&' : '?').'responsivity_frame=1';
+
 
 		// Current device options
 		$this->show_devices = isset($_GET['show_devices']) && strip_tags($_GET['show_devices']) ? true : false;
@@ -40,7 +46,7 @@ class ResponsivityTool {
 
 	function print_form($action = "", $target = "_self") {
 
-		echo '<form id="optioner-form" action="'.$action.'" method="get" accept-charset="utf-8" target="'.($target).'">';
+		echo '<form id="optioner-form" action="'.$action.'" method="get" accept-charset="utf-8" target="'.$target.'">';
 
 			$this->print_page_input();
 			$this->print_options();
@@ -121,7 +127,7 @@ class ResponsivityTool {
 	    	<input type="checkbox" id="device-custom" name="device[]" value="Custom" <?=isset($_GET['device-custom']) && $_GET['device-custom'] ? "checked" : ""?>> <b>Custom size</b>
 	    	<input type="number" id="device-custom-width" name="device-custom[width]" <?=isset($_GET['device-custom']['width']) ? 'value="'.$_GET['device-custom']['width'].'"' : "disabled"?> placeholder="width" min="100"> x
 	    	<input type="number" id="device-custom-height" name="device-custom[height]" <?=isset($_GET['device-custom']['height']) ? 'value="'.$_GET['device-custom']['height'].'"' : "disabled"?> placeholder="height" min="100">
-    	</label><br/>
+    	</label><br/><br/>
 
 <?php
 	}
@@ -133,7 +139,7 @@ class ResponsivityTool {
 
 ?>
 
-		<button id="resp-submit" class="button button-primary" style="width: 100%;"><?=$device_entered ? "Start" : "Update"?></button>
+		<button id="resp-submit" class="button button-primary"><?=$device_entered ? "Open Responsivity Tool" : "Update"?></button>
 
 <?php
 	}
