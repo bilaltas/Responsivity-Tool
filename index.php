@@ -5,7 +5,7 @@ A tool that allows to make responsivity arrangements easier for web projects. Yo
 
 Version: 0.0.5
 GitHub: https://github.com/bilaltas/Responsivity-Tool
-Example: http://www.bilaltas.net/responsivity/
+Example: https://www.bilaltas.net/responsivity/
 */
 
 	require_once( 'responsivity-class.php' );
