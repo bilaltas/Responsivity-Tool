@@ -1,4 +1,12 @@
 <?php
+/*
+RESPONSIVITY TOOL
+A tool that allows to make responsivity arrangements easier for web projects. You can also send a link to your clients to show them how their websites look on specific devices or some custom screen sizes.
+
+Version: 0.0.5
+GitHub: https://github.com/bilaltas/Responsivity-Tool
+Example: http://www.bilaltas.net/responsivity/
+*/
 
 	require_once( 'responsivity-class.php' );
 	$responsivity = new ResponsivityTool();
