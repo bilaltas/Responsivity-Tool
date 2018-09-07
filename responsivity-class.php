@@ -38,9 +38,9 @@ class ResponsivityTool {
 	}
 
 
-	function print_form() {
+	function print_form($action = "", $target = "_self") {
 
-		echo '<form id="optioner-form" action="" method="get" accept-charset="utf-8">';
+		echo '<form id="optioner-form" action="'.$action.'" method="get" accept-charset="utf-8" target="'.($target).'">';
 
 			$this->print_page_input();
 			$this->print_options();
@@ -58,7 +58,7 @@ class ResponsivityTool {
 		<h2>Page</h2>
 		<label for="resp_page">
 	    	<?=$this->site_url?><input type="text" name="page" value="<?=$this->page_url?>" placeholder="Enter the page extension">
-		</label><br/>
+		</label><br/><br/>
 
 <?php
 	}
@@ -83,7 +83,7 @@ class ResponsivityTool {
 
     	<label for="resp_show_titles">
 	    	<input type="checkbox" id="resp_show_titles" name="show_titles" value="true" <?=$this->show_titles ? "checked" : ""?>> Show Titles
-    	</label><br/>
+    	</label><br/><br/>
 
 <?php
 	}
@@ -133,7 +133,7 @@ class ResponsivityTool {
 
 ?>
 
-		<button id="resp-submit" style="width: 100%;"><?=$device_entered ? "Start" : "Update"?></button>
+		<button id="resp-submit" class="button button-primary" style="width: 100%;"><?=$device_entered ? "Start" : "Update"?></button>
 
 <?php
 	}
