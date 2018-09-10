@@ -8,6 +8,8 @@ GitHub: https://github.com/bilaltas/Responsivity-Tool
 Example: https://www.bilaltas.net/responsivity/
 */
 
+
+
 	require_once( 'responsivity-class.php' );
 	$responsivity = new ResponsivityTool();
 
@@ -69,7 +71,7 @@ Example: https://www.bilaltas.net/responsivity/
 		</div>
 
 
-		<script src="js/jquery-2.2.2.min.js"></script>
+		<script src="<?=$responsivity->jQuery_file?>"></script>
 		<script src="js/script.js"></script>
 	</body>
 </html>

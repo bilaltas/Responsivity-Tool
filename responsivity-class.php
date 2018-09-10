@@ -11,6 +11,8 @@ class ResponsivityTool {
 	var $full_height_mode;
 	var $show_titles;
 
+	var $jQuery_file;
+
 
 	function __construct() {
 
@@ -32,6 +34,12 @@ class ResponsivityTool {
 		$this->show_devices = isset($_GET['show_devices']) && strip_tags($_GET['show_devices']) ? true : false;
 		$this->full_height_mode = isset($_GET['full_height_mode']) && strip_tags($_GET['full_height_mode']) ? true : false;
 		$this->show_titles = isset($_GET['show_titles']) && strip_tags($_GET['show_titles']) ? true : false;
+
+
+		// Check if this is a WP Plugin
+		$this->jQuery_file = "js/jquery-2.2.2.min.js";
+		if ( file_exists("../../../../wp-config.php") )
+			$this->jQuery_file = "/wp-includes/js/jquery/jquery.js?ver=1.12.4";
 
 	}
 
