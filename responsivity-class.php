@@ -12,6 +12,7 @@ class ResponsivityTool {
 	var $show_titles;
 
 	var $jQuery_file;
+	var $base;
 
 
 	function __construct() {
@@ -38,8 +39,12 @@ class ResponsivityTool {
 
 		// Check if this is a WP Plugin
 		$this->jQuery_file = "js/jquery-2.2.2.min.js";
-		if ( file_exists("../../../../wp-config.php") )
+		$this->base = "";
+		if ( file_exists("../../../../wp-config.php") || file_exists("wp-config.php") ) {
 			$this->jQuery_file = "/wp-includes/js/jquery/jquery.js?ver=1.12.4";
+			$this->base = "/wp-content/plugins/responsivity/viewer/";
+
+		}
 
 	}
 
