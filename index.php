@@ -3,7 +3,7 @@
 RESPONSIVITY TOOL
 A tool that allows to make responsivity arrangements easier for web projects. You can also send a link to your clients to show them how their websites look on specific devices or some custom screen sizes.
 
-Version: 0.0.6
+Version: 0.0.7
 GitHub: https://github.com/bilaltas/Responsivity-Tool
 Example: https://www.bilaltas.net/responsivity/
 */
