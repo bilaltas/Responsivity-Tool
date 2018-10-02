@@ -62,6 +62,11 @@ Example: https://www.bilaltas.net/responsivity/
 				<i class="fa fa-refresh" aria-hidden="true"></i>
 			</div>
 
+			<!-- SHARER -->
+			<div id="sharer" class="inactive">
+				<a href="mailto:?Subject=Here is the responsive view of the site&amp;Body=Link: <?=$responsivity->site_url.urlencode($_SERVER['REQUEST_URI'])?>"><i class="fa fa-envelope"></i></a>
+			</div>
+
 			<!-- OPTIONS -->
 			<div id="optioner" class="<?php echo $device_entered ? "active" : "inactive"; ?>">
 				<i class="fa fa-gear" aria-hidden="true"></i>
